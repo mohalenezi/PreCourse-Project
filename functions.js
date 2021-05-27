@@ -19,8 +19,15 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+var result = 0;
+for (var i=0; i<numbers.length; i++){
+  if (numbers[i] % 2 === 1)
+  result = result+numbers[i]
 }
+return result;
+} 
+
+
 
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
@@ -58,7 +65,14 @@ function characterCount(string, c) {
  * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
  */
 function differences(numbers) {
-  // Your code here
+  const createDifference = (numbers) => {
+    const differenceArray = [];
+    for(let i = 1; i < numbers.length; i++){
+       differenceArray.push(Math.abs(numbers[i] - numbers[i - 1]));
+    };
+    return differenceArray;
+ }
+ console.log(createDifference(numbers));
 }
 
 // console.log(differences([11, 35, 52, 14, 56]));
@@ -146,8 +160,14 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] === x) {
+            return true;
+        }
+    }
+    return false;
 }
+
 
 // console.log(elementInArray([5, 6, 7], 8));
 
